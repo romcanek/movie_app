@@ -1,0 +1,26 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    height: max-content;
+    background-color: rgb(20, 0, 53);
+    color: white;
+    cursor: pointer;
+    transition: filter 0.3s ease-out;
+    img{
+       width: 100%;
+       max-width: 500px;
+       height: auto;
+    }
+    h2{
+        padding: .5em;
+        text-align: center;
+        font-size: 1.25rem;
+        max-width: 500px;
+    }
+
+    &:hover{
+        filter: brightness(65%);
+    }
+}

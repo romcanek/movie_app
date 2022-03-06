@@ -1,0 +1,147 @@
+// mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-container{
+    min-height: 100vh;
+    position: relative;
+}
+
+// styling
+.navbar{
+    position: fixed;
+    display: flex;
+    z-index: 500;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 4.5em;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(50, 4, 122);
+    color: white;
+    height: 6vh;
+
+    .search_link_container{
+        @include flex-center();
+        gap: 3em;
+
+        .links{
+            @include flex-center();
+            list-style: none;
+            gap: 2em;
+            a{
+                position: relative;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    bottom: -3px;
+                    background-color: white;
+                    left: 0;
+                    width: 0%;
+                    height: 2px;
+                    transition: all 0.3s ease-out;
+                }
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+        }
+
+        .search_bar{
+            height: 1.75em;
+            input{
+                height: 100%;
+                padding: 10px;
+            }
+            button{
+                height: 100%;
+                padding-inline: 10px;
+                border: none;
+                background-color: black;
+                color: white;
+                cursor: pointer;
+                &:hover{
+                    background-color: rgb(27, 27, 27);
+                }
+            }
+        }
+    }
+}
+
+
+.container{
+    margin-top: 8em;
+    padding-bottom: 7em;    // to leave space before footer
+    margin-inline: 5%;
+}
+
+.error{
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.movie_list{
+    display: grid;
+    max-width: 100%;
+    grid-template-columns: repeat(3, minmax(auto, 500px));
+    justify-content: space-between;
+    row-gap: 3em;
+    column-gap: 3em;
+    margin-top: 3em;
+}
+
+.pager{
+    @include flex-center();
+    width: 100%;
+    margin-top: 3em;
+    column-gap: 3em;
+
+    button{
+        font-size: 1.3rem;
+        padding-inline: .55em;
+        padding-block: .2em;
+        border: none;
+        background-color: rgb(50, 4, 122);
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+// styles for profile
+.profile_container{
+    @include flex-center();
+    flex-wrap: wrap;
+    margin-top: 3em;
+    row-gap: 3em;
+    column-gap: 3em;
+    padding-bottom: 7em;
+}
+
+.profile_title_div{
+    @include flex-center();
+    flex-direction: column;
+    row-gap: 1em;
+}
+.profile_title{
+    text-align: center;
+    margin-top: 4em;
+}
+.profile_btn{
+    background-color: rgb(173, 0, 0);
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    padding-inline: 1em;
+    padding-block: .5em;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(136, 0, 0);
+    }
+}
