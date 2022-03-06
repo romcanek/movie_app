@@ -62,7 +62,7 @@ export default function Page({ movies, page }) {
 
                     <ul className={styles.links}>
                         <li>
-                            <Link href={"/profile"}>
+                            <Link href={"/profile"} passHref>
                                 <a>Profile</a>
                             </Link>
                         </li>
@@ -83,19 +83,19 @@ export default function Page({ movies, page }) {
                 <span className={styles.error} style={{ display: filter.length > 0 ? 'none' : 'block' }}>There was nothing found<br /> :(</span>
 
                 <div className={styles.pager}>
-                    <Link href={`/pg/1`}>
+                    <Link href={`/pg/1`} passHref>
                         <button style={{ backgroundColor: page == 1 ? 'rgb(96, 12, 231)' : 'rgb(50, 4, 122)' }}>1</button>
                     </Link>
-                    <Link href={`/pg/${df + 1 - substract}`}>
+                    <Link href={`/pg/${df + 1 - substract}`} passHref>
                         <button style={{ backgroundColor: page == df + 1 - substract ? 'rgb(96, 12, 231)' : 'rgb(50, 4, 122)' }}>{df + 1 - substract}</button>
                     </Link>
-                    <Link href={`/pg/${df + 2 - substract}`}>
+                    <Link href={`/pg/${df + 2 - substract}`} passHref>
                         <button style={{ backgroundColor: page == df + 2 - substract ? 'rgb(96, 12, 231)' : 'rgb(50, 4, 122)' }}>{df + 2 - substract}</button>
                     </Link>
-                    <Link href={`/pg/${df + 3 - substract}`}>
+                    <Link href={`/pg/${df + 3 - substract}`} passHref>
                         <button style={{ backgroundColor: page == df + 3 - substract ? 'rgb(96, 12, 231)' : 'rgb(50, 4, 122)' }}>{df + 3 - substract}</button>
                     </Link>
-                    <Link href={`/pg/500`}>
+                    <Link href={`/pg/500`} passHref>
                         <button style={{ backgroundColor: page == 500 ? 'rgb(96, 12, 231)' : 'rgb(50, 4, 122)' }}>500</button>
                     </Link>
                 </div>

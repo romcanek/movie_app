@@ -34,7 +34,7 @@ export default function Profile() {
                 <div className={styles.search_link_container}>
                     <ul className={styles.links}>
                         <li>
-                            <Link href={"/"}>
+                            <Link passHref href={"/"}>
                                 <a>Home</a>
                             </Link>
                         </li>

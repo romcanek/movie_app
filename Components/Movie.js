@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 export default function Movie({ title, backdrop_path, overview, vote_average, release_date, genre_ids, mv_id }) {
     return (
-        <Link href={`/desc/${title}?img=${backdrop_path}&desc=${overview}&vote_avg=${vote_average}&release=${release_date}&genres=${genre_ids}&mvid=${mv_id} `}>
+        <Link passHref href={`/desc/${title}?img=${backdrop_path}&desc=${overview}&vote_avg=${vote_average}&release=${release_date}&genres=${genre_ids}&mvid=${mv_id} `}>
             <motion.div
                 className={styles.card}
                 animate={{ opacity: 1 }}
