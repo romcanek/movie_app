@@ -104,7 +104,7 @@ export default function Desc({ query, genre_data }) {
                     </div>
                     <p className={styles.release}>{query.release}</p>
                     <div className={styles.genres}><h4>Genres: </h4>{genres_as_text.map(x => {
-                        return <span>{x}</span>
+                        return <span key={x}>{x}</span>
                     })}
                     </div>
                     <p className={styles.desc}>{query.desc}</p>
