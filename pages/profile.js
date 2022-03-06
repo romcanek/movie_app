@@ -49,7 +49,7 @@ export default function Profile() {
             <main className={styles.profile_container}>
                 {movies != null ? movies.map(res => {
                     return <Movie key={res.key} mv_id={res.key} genre_ids={res.genres} release_date={res.release} vote_average={res.vote_avg} overview={res.desc} title={res.title} backdrop_path={res.backdrop_path}></Movie>
-                }) : <span>You don't have any favourites yet</span>}
+                }) : <span>You don&apos;t have any favourites yet</span>}
             </main>
 
             <Footer></Footer>
