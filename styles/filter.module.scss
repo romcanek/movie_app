@@ -7,12 +7,32 @@
         font-size: 1.2rem;
         padding-inline: 1em;
         padding-block: 0.5em;
-        background-color: rgb(72, 4, 182);
+        background-color: rgb(50, 4, 122);
         color: white;
         border: none;
         cursor: pointer;
         &:hover{
             background-color: rgb(98, 0, 255);
+        }
+    }
+}
+
+@media only screen and (max-width: 510px) {
+    .button-container{
+        gap: .5em;
+    
+        button{
+            border-radius: 5px;
+            font-size: 1.1rem;
+            padding-inline: 1em;
+            padding-block: 0.5em;
+            background-color: rgb(72, 4, 182);
+            color: white;
+            border: none;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(98, 0, 255);
+            }
         }
     }
 }

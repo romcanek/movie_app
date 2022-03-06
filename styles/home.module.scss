@@ -113,9 +113,56 @@
     }
 }
 
+/* ================
+    media queries
+ ====================*/
+@media only screen and (max-width: 800px) {
+    .movie_list{
+        grid-template-columns: repeat(2, minmax(auto, 500px));
+    }
+}
+@media only screen and (max-width: 700px) {
+    .navbar{
+        padding-inline: 2em;
+        height: max-content;
+        row-gap: 1.5em;
+        flex-direction: column;
+        h2{
+            margin-top: .5em;
+        }
+        .search_link_container{
+            flex-direction: column-reverse;
+            row-gap: 1.5em;
+            padding-bottom: 1em;
+        }
+    }
+    .container{
+        margin-top: 12em;
+    }
+}
+@media only screen and (max-width: 510px) {
+    .movie_list{
+        grid-template-columns: repeat(1, minmax(auto, 500px));
+    }
+    .pager{
+        column-gap: 1em;
+        button{
+            font-size: 1.1rem;
+            padding-inline: .55em;
+            padding-block: .2em;
+        }
+    }
+    .search_bar{
+        input{
+            width: 12em;
+        }
+    }
+}
+
 // styles for profile
 .profile_container{
     @include flex-center();
+    margin-inline: 5%;
     flex-wrap: wrap;
     margin-top: 3em;
     row-gap: 3em;
