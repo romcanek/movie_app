@@ -54,6 +54,9 @@
         .search_bar{
             height: 1.75em;
             input{
+                border: none;
+                background-color: white;
+                color: black;
                 height: 100%;
                 padding: 10px;
             }

@@ -2,10 +2,15 @@ import Head from 'next/head'
 import styles from '../../styles/desc.module.scss'
 import { css, cx } from '@emotion/css'
 import Movie from '../../Components/Movie'
+import { useState } from 'react'
 
 export default function Desc({ query, genre_data }) {
 
     const path_to_img = "https://image.tmdb.org/t/p/w500" + query.img
+
+    const [anim, setAnim] = useState(false)
+
+    const classes = `styles.add`
 
     let bg;
     if (query.vote_avg > 7) {
@@ -50,7 +55,7 @@ export default function Desc({ query, genre_data }) {
             })
         }
         prev.push(now)
-
+        setAnim(true)
         localStorage.setItem("movies", JSON.stringify(prev))
     }
 
@@ -108,7 +113,7 @@ export default function Desc({ query, genre_data }) {
                     })}
                     </div>
                     <p className={styles.desc}>{query.desc}</p>
-                    <button onClick={handleClick} className={styles.add}>Add to favourites</button>
+                    <button onClick={handleClick} className={`${styles.add} ${anim ? styles.anim : null}`}>Add to favourites</button>
                 </div>
             </div>
         </div>
