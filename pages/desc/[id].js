@@ -1,10 +1,12 @@
 import Head from 'next/head'
 import styles from '../../styles/desc.module.scss'
 import { css, cx } from '@emotion/css'
-import Movie from '../../Components/Movie'
+import { Router, useRouter } from 'next/router'
 import { useState } from 'react'
 
 export default function Desc({ query, genre_data }) {
+
+    const router = useRouter()
 
     const path_to_img = "https://image.tmdb.org/t/p/w500" + query.img
 
@@ -111,6 +113,9 @@ export default function Desc({ query, genre_data }) {
                     <div className={styles.genres}><h4>Genres: </h4>{genres_as_text.map(x => {
                         return <span key={x}>{x}</span>
                     })}
+                    </div>
+                    <div onClick={() => router.back()} className={styles.exit}>
+                        X
                     </div>
                     <p className={styles.desc}>{query.desc}</p>
                     <button onClick={handleClick} className={`${styles.add} ${anim ? styles.anim : null}`}>Add to favourites</button>
